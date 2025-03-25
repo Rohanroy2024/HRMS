@@ -302,6 +302,14 @@ const Employee = () => {
               onChange={handleAddInputChange}
               placeholder="Company_Email"
             />
+            <input
+              type="text"
+              name="email"
+              onChange={handleAddInputChange}
+              placeholder="Refered-Email"
+            />
+
+
              <input
               type="text"
               name="reports-to"
