@@ -1,0 +1,211 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 314px; /* Default margin for desktop */
+  flex-wrap: nowrap;  /* Prevent wrapping of items */
+}
+
+/* Left side of the navbar */
+.navbar-left h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Center part for the search bar */
+.navbar-center {
+  flex: 1;
+  text-align: center;
+}
+
+.search-bar {
+  padding: 8px 15px;
+  width: 60%;
+  margin-right: 359px;
+  border: 1px solid #fff;
+  font-size: 17px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 20px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  font-size: 20px;
+}
+
+/* Right side of the navbar */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 15px; /* Ensure space between icons */
+}
+
+/* Style for notification icon */
+.notification-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Style for profile icon */
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 75px;
+  right: 8px;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+  width: 220px;
+  padding: 15px 10px;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  animation: dropdownFadeIn 0.3s forwards;
+}
+
+/* Show dropdown when the `visible` class is added */
+.dropdown-menu.visible {
+  display: flex;
+  opacity: 1;
+}
+
+/* Dropdown header (profile info) */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.dropdown-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-user-name {
+  font-weight: bold;
+}
+
+.dropdown-user-designation {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Dropdown item styles */
+.dropdown-item {
+  padding: 12px 20px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  transition: background-color 0.2s ease;
+  color: #000;
+}
+
+.dropdown-item:hover {
+  background-color: #e4dede;
+}
+
+.dropdown-item .material-icons {
+  margin-right: 10px;
+  font-size: 23px;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Version Styles */
+
+/* Media Queries for Mobile Responsiveness */
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  /* Remove margin-left on mobile */
+  .navbar {
+    margin-left: 86px !important; /* Ensure the left margin is removed */
+    padding: 8px 10px;
+    width: 86% !important; /* Set width to 100% on mobile */
+  }
+
+  /* Adjust navbar-right and icons on mobile */
+  .navbar-right {
+    display: flex;
+    justify-content: flex-end;  /* Align items to the right */
+    gap: 10px; /* Adjust space between icons */
+    width: auto;
+  }
+
+  .notification-icon img,
+  .profile-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Adjust search bar for better fitting */
+  .search-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-icon {
+    left: -11px;
+  }
+}

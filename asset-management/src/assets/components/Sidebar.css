@@ -1,0 +1,98 @@
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* When sidebar is closed in mobile view */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  display: flex; /* Use flexbox to align icon and text on the same line */
+  align-items: center; /* Vertically center the items */
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active link styling */
+.sidebar ul li .active-link {
+  background-color: #bfd8f3; /* Active link background color */
+  color: #696cff; /* Active link text color */
+  font-weight: bold; /* Optional: Make the active link bold */
+}
+
+/* Hover effect for inactive links */
+.sidebar ul li a:hover {
+  background-color: #bfd8f3;
+}
+
+.logo img {
+  width: 60%; /* Adjust the width according to your logo's size */
+  height: auto;
+}
+
+/* Add margin to the icon */
+.material-icons {
+  margin-right: 10px; /* Space between the icon and the text */
+  font-size: 24px; /* Adjust icon size if needed */
+}
+
+/* Add mobile responsive styles */
+@media (max-width: 768px) {
+  /* On mobile screens, make sidebar hidden by default */
+  .sidebar {
+    transform: translateX(-100%); /* Hide the sidebar */
+  }
+
+  /* Toggler (hamburger menu) */
+  .menu-toggler {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000; /* Make sure the menu icon is on top */
+  }
+
+  /* When sidebar is opened on mobile */
+  .sidebar.open {
+    transform: translateX(0); /* Show the sidebar */
+  }
+
+  /* Adjust layout when sidebar is open on mobile */
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    padding-top: 60px; /* Add some padding so the content doesn't get hidden behind the sidebar */
+  }
+}

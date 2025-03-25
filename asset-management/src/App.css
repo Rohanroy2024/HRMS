@@ -1,0 +1,53 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .main-content {
+ 
+  display: flex;
+} */
+
+
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes the full height of the viewport */
+}
+
+.main-content {
+  flex: 1; /* This allows the content to expand and push the footer down */
+  /* padding-bottom: 60px; Adjust this value to match the height of your footer */
+}
+
+
+.dashboard-content {
+  padding: 20px;
+  /* background-color: #fff; */
+  border-radius: 5px;
+}
+
+
+/* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 314px;
+    margin-top: 15px;
+    width: 77%;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+
+

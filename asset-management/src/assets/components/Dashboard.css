@@ -1,0 +1,85 @@
+/* Ensure the content is aligned and has proper padding */
+.dashboard-content {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 0; /* Remove left margin for full width on mobile */
+    width: 83%; /* Ensure full width */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    height: auto; /* Allow content to grow dynamically */
+    box-sizing: border-box; /* Ensure padding and margin are accounted for */
+    margin-left: 271px;
+}
+
+/* Layout to display charts in a grid with more control over size */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 charts per row */
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+    height: auto; /* Allow the grid to grow dynamically */
+    overflow: hidden; /* Disable scrolling within the grid */
+}
+
+/* Chart wrapper with proper height management */
+.chart-wrapper {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto; /* Ensure chart wrapper grows to fit content */
+    max-width: 100%;
+    overflow: hidden; /* Disable scrolling within the chart wrapper */
+}
+
+/* Add sticky behavior to the chart heading */
+.chart-wrapper h3 {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Make the canvas (chart) scale properly */
+.chart-wrapper canvas {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure chart fits within wrapper without clipping */
+}
+
+/* Make charts responsive on smaller screens */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 charts per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make dashboard content full width on mobile */
+    .dashboard-content {
+        margin-left: 0; /* Full-width on mobile */
+        width: 161%; /* Ensure it takes full screen width */
+        padding-left: 15px; /* Add some padding on the sides */
+        padding-right: 15px; /* Add padding on the right as well */
+        min-height: 100vh; /* Ensure content fills full viewport height */
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack charts vertically on small screens */
+    }
+}
