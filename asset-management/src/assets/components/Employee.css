@@ -289,9 +289,10 @@
 
 .gender {
   width: 35%;
-  height: 20%;
+  /* height: 20%; */
 }
 
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -304,125 +305,11 @@
   align-items: center;
 }
 
-.delete-confirmation {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.yes-btn, .no-btn {
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.yes-btn {
-  background-color: red;
-  color: white;
-  border: none;
-}
-
-.no-btn {
-  background-color: green;
-  color: white;
-  border: none;
-}
-
-/* Media Queries for Mobile Responsiveness */
-
-/* For screens smaller than 768px */
-@media screen and (max-width: 768px) {
-  .employee-list-container {
-      margin-left: 0;
-  }
-
-  .employee-list {
-      margin-left: 0;
-      margin-right: 0;
-  }
-
-  .employee-list th, .employee-list td {
-      padding: 8px;
-  }
-
-  .edit-form {
-      width: 90%;
-      padding: 20px;
-  }
-
-  .employee-image {
-      width: 35px;
-      height: 35px;
-  }
-
-  .employee-name-cell {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .employee-name {
-      font-size: 14px;
-  }
-
-  .employee-email, .employee-gender {
-      font-size: 12px;
-  }
-
-  .button-container {
-      flex-direction: column;
-  }
-
-  .button-container button {
-      margin-bottom: 10px;
-  }
-}
-
-/* For screens smaller than 480px */
-@media screen and (max-width: 480px) {
-  .employee-list-container {
-      padding: 10px;
-  }
-
-  .employee-list {
-      margin-left: 256px;
-      margin-right: 3px;
-      margin-top: 28px;
-      width: 159%;
-  }
-
-  .employee-list th, .employee-list td {
-      padding: 8px;
-  }
-
-  .employee-name {
-      font-size: 12px;
-  }
-
-  .employee-image {
-      width: 30px;
-      height: 30px;
-  }
-
-  .employee-name-cell {
-      flex-direction: column;
-      margin-top: 20px;
-  }
-
-  .edit-form {
-      width: 95%;
-      padding: 15px;
-  }
-
-  .button-container button {
-      font-size: 12px;
-  }
-}
 /* Add Employee Form Styles */
 .add-employee {
   background-color: #0056b3;
   color: #fff;
-  margin-left:1091px;
+  margin-left: 0; /* Align button to the left */
   margin-bottom: 20px;
   padding: 12px 25px;
   border: none;
@@ -436,50 +323,53 @@
   background-color: #004085;
 }
 
-
-
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Optional: background overlay */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it's on top */
-}
-
+/* Add Employee Form Container - Right-aligned */
 .add-form {
   width: 100%;
-  max-width: 500px; /* Optional: Adjust form width */
-  max-height: 80vh; /* Adjust the form's max height */
-  overflow-y: auto; /* Enable vertical scroll */
+  max-width: 500px;
+  height: 100vh; /* Set the height to 100% of the viewport height */
   padding: 20px;
   background-color: white;
   border-radius: 10px;
+  box-sizing: border-box;
+  position: fixed; /* Use fixed positioning to make it stick to the top */
+  right: 0; /* Align it to the right side */
+  top: 0; /* Align it to the top of the screen */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
-
-
+/* Rest of the form styling remains the same */
 .add-form h3 {
   font-size: 20px;
   margin-bottom: 15px;
-  text-align: center;
+  text-align: left;
 }
 
+/* Input fields inside the Add Employee form */
 .add-form input,
 .add-form select {
-  width: 92%;
+  width: 100%;
   padding: 12px;
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
+/* Dropdown arrow for select element */
+.add-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="none" d="M0 0h16v16H0z"/><path fill="gray" d="M4 5l4 4 4-4z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 35px;
+}
+
+/* Save Button */
 .add-form button {
   background-color: #28a745;
   color: white;
@@ -497,6 +387,7 @@
   background-color: #218838;
 }
 
+/* Cancel Button */
 .cancel-btn {
   background-color: #dc3545;
   color: white;
@@ -514,16 +405,10 @@
 
 /* Mobile Responsiveness for Add Employee Form */
 @media (max-width: 768px) {
-  .add-employee {
-    width: 17%; /* Make button full width */
-    margin-left: 717px;
-    font-size: 14px;
-    padding: 12px 20px;
-  }
-
   .add-form {
     width: 90%;
     padding: 15px;
+    height: 100vh; /* Keep full height on smaller screens */
   }
 
   .add-form input,
@@ -540,14 +425,10 @@
 }
 
 @media (max-width: 480px) {
-  .add-employee {
-    font-size: 12px;
-    padding: 10px 15px;
-  }
-
   .add-form {
     width: 90%;
     padding: 10px;
+    height: 100vh; /* Keep full height on very small screens */
   }
 
   .add-form input,
@@ -562,6 +443,7 @@
     font-size: 12px;
   }
 }
+
 /* Styling for the image upload input */
 .image-upload {
   margin: 10px 0;
