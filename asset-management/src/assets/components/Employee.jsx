@@ -206,126 +206,124 @@ const Employee = () => {
       )}
 
       {/* Add Employee Modal */}
-      {isAdding && (
-        <div className="modal-overlay">
-          <div className="add-form">
-            <h3>Add New Employee</h3>
-            <input
-              type="text"
-              name="name"
-              value={newEmployee.name}
-              onChange={handleAddInputChange}
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              name="role"
-              value={newEmployee.role}
-              onChange={handleAddInputChange}
-              placeholder="Role"
-            />
-            <select
-              type="text"
-              name="status"
-              value={newEmployee.status}
-              onChange={handleAddInputChange}
-              placeholder="Status"
-            >
-              <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
-            </select>
+     {isAdding && (
+  <div className="modal-overlay">
+    <div className="add-form">
+      <div className="header">
+        <h3>Add New Employee</h3>
+        <span className="close-icon" onClick={() => setIsAdding(false)}>&#x2715;</span> {/* Cross icon */}
+      </div>
 
-            <select
-              className="gender"
-              name="gender"
-              value={newEmployee.gender}
-              onChange={handleAddInputChange}
-            >
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
+      <input
+        type="text"
+        name="name"
+        value={newEmployee.name}
+        onChange={handleAddInputChange}
+        placeholder="Name"
+      />
+      <input
+        type="text"
+        name="role"
+        value={newEmployee.role}
+        onChange={handleAddInputChange}
+        placeholder="Role"
+      />
+      <select
+        name="status"
+        value={newEmployee.status}
+        onChange={handleAddInputChange}
+        placeholder="Status"
+      >
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
 
-            <input
-              type="date"
-              name="dob"
-              onChange={handleAddInputChange}
-              placeholder="Date of Birth"
-            />
+      <select
+        className="gender"
+        name="gender"
+        value={newEmployee.gender}
+        onChange={handleAddInputChange}
+      >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
 
-            <input
-              type="text"
-              name="employee-number"
-              onChange={handleAddInputChange}
-              placeholder="Employee_Id"
-            />
+      <input
+        type="date"
+        name="dob"
+        onChange={handleAddInputChange}
+        placeholder="Date of Birth"
+      />
+      <input
+        type="text"
+        name="employee-number"
+        onChange={handleAddInputChange}
+        placeholder="Employee_Id"
+      />
+      <input
+        type="text"
+        name="department"
+        onChange={handleAddInputChange}
+        placeholder="Department"
+      />
+      <input
+        type="text"
+        name="designation"
+        onChange={handleAddInputChange}
+        placeholder="Designation"
+      />
+      <input
+        type="text"
+        name="branch"
+        onChange={handleAddInputChange}
+        placeholder="Branch"
+      />
+      <input
+        type="text"
+        name="employee_type"
+        onChange={handleAddInputChange}
+        placeholder="Employee_type"
+      />
+      <input
+        type="text"
+        name="phone"
+        onChange={handleAddInputChange}
+        placeholder="Phone"
+      />
+      <input
+        type="text"
+        name="email"
+        onChange={handleAddInputChange}
+        placeholder="Personal_Email"
+      />
+      <input
+        type="text"
+        name="email"
+        onChange={handleAddInputChange}
+        placeholder="Company_Email"
+      />
+      <input
+        type="text"
+        name="email"
+        onChange={handleAddInputChange}
+        placeholder="Refered-Email"
+      />
+      <input
+        type="text"
+        name="reports-to"
+        onChange={handleAddInputChange}
+        placeholder="Reports-To"
+      />
 
-            <input
-              type="text"
-              name="department"
-              onChange={handleAddInputChange}
-              placeholder="Department"
-            />
-            <input
-              type="text"
-              name="designation"
-              onChange={handleAddInputChange}
-              placeholder="Designation"
-            />
-
-            <input
-              type="text"
-              name="branch"
-              onChange={handleAddInputChange}
-              placeholder="Branch"
-            />
-            <input
-              type="text"
-              name="employee_type"
-              onChange={handleAddInputChange}
-              placeholder="Employee_type"
-            />
-            <input
-              type="text"
-              name="phone"
-              onChange={handleAddInputChange}
-              placeholder="Phone"
-            />
-            <input
-              type="text"
-              name="email"
-              onChange={handleAddInputChange}
-              placeholder="Personal_Email"
-            />
-            <input
-              type="text"
-              name="email"
-              onChange={handleAddInputChange}
-              placeholder="Company_Email"
-            />
-            <input
-              type="text"
-              name="email"
-              onChange={handleAddInputChange}
-              placeholder="Refered-Email"
-            />
-
-
-             <input
-              type="text"
-              name="reports-to"
-              onChange={handleAddInputChange}
-              placeholder="Reports-To"
-            />
-
-            <button className="save" onClick={handleAddEmployee}>
-              Add Employee
-            </button>
-            <button onClick={() => setIsAdding(false)} className="cancel-btn">
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
+      <button className="save" onClick={handleAddEmployee}>
+        Add Employee
+      </button>
+      <button onClick={() => setIsAdding(false)} className="cancel-btn">
+        Cancel
+      </button>
+    </div>
+  </div>
+)}
 
       {/* ADD EMPLOYEE BUTTON */}
       <div>

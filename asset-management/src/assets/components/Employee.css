@@ -309,7 +309,7 @@
 .add-employee {
   background-color: #0056b3;
   color: #fff;
-  margin-left: 0; /* Align button to the left */
+  margin-left: 1094px; /* Align button to the left */
   margin-bottom: 20px;
   padding: 12px 25px;
   border: none;
@@ -473,4 +473,19 @@
 .image-preview img {
   border: 2px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.close-icon{
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+.close-icon:hover{
+  background-color: #fafdff;
 }

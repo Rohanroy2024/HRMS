@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import axios from "axios"; // Import axios for making HTTP requests
 import "./Login.css"; // Add your CSS file to style
 
 const Login = () => {
@@ -28,34 +29,32 @@ const Login = () => {
     }
 
     try {
-      // Simulating an API call to validate login with the token
-      const response = await fetch("https://hrms.xlayer.in/api/method/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${Token}`, // Sending the token in the header
+      // Use axios for making the POST request
+      const response = await axios.post(
+        "https://hrms.xlayer.in/api/method/login",
+        {
+          usr: usr,
+          pwd: pwd,
         },
-        body: JSON.stringify({
-          usr:usr,
-          pwd:pwd,
-        }),
-      });
-      console.log('printing the response',response);
-      
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${Token}`, // Sending the token in the header
+          },
+        }
+      );
 
-      const data = await response.json();
-      console.log('printing the data',data);
-      
-
-      if (response.ok) {
+      // Handle successful login response
+      if (response.status === 200) {
         localStorage.setItem("loggedIn", true);
         // Redirect to dashboard page if login is successful
         navigate("/dashboard");
       } else {
-        setErrorMessage(data.message || "Login failed. Please try again.");
+        setErrorMessage(response.data.message || "Login failed. Please try again.");
       }
     } catch (error) {
       setErrorMessage("An error occurred while logging in.");
+      console.error("Login error: ", error);
     }
   };
 
@@ -127,9 +126,7 @@ const Login = () => {
                     onClick={togglePasswordVisibility}
                   >
                     <i
-                      className={`icon-base bx ${
-                        showPassword ? "bx-show" : "bx-hide"
-                      }`}
+                      className={`icon-base bx ${showPassword ? "bx-show" : "bx-hide"}`}
                     ></i>
                   </span>
                 </div>
