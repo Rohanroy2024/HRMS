@@ -58,10 +58,26 @@
   height: auto;
 }
 
+
+
+
+@media (max-width: 768px) {
+  /* On mobile screens, make sidebar hidden by default */
+  .logo img {
+    margin-top: 90px;
+  }
+
+
 /* Add margin to the icon */
 .material-icons {
   margin-right: 10px; /* Space between the icon and the text */
   font-size: 24px; /* Adjust icon size if needed */
+  margin-left: 8px;
+
+}
+.menubar{
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 /* Add mobile responsive styles */

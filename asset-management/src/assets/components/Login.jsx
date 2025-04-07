@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import axios from "axios"; // Import axios for making HTTP requests
 import "./Login.css"; // Add your CSS file to style
+import Registration from "./Registration";
 
 const Login = () => {
   const [usr, setEmail] = useState("");
@@ -14,6 +15,12 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+
+  const handleregistration = () => {
+    navigate('/registration');
+  };
+  
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -148,8 +155,8 @@ const Login = () => {
 
             <p className="text-center">
               <span>New on our platform?</span>
-              <a href="./login">
-                <span className="create-account">Create an account</span>
+              <a href="./registration">
+                <span className="create-account"  onClick={handleregistration}>Create an account</span>
               </a>
             </p>
           </div>

@@ -69,17 +69,38 @@
     }
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    /* Make dashboard content full width on mobile */
-    .dashboard-content {
-        margin-left: 0; /* Full-width on mobile */
-        width: 161%; /* Ensure it takes full screen width */
-        padding-left: 15px; /* Add some padding on the sides */
-        padding-right: 15px; /* Add padding on the right as well */
-        min-height: 100vh; /* Ensure content fills full viewport height */
+    .account-settings {
+      padding: 15px;
     }
-
-    .dashboard-grid {
-        grid-template-columns: 1fr; /* Stack charts vertically on small screens */
+  
+    .profile-info {
+      flex-direction: column;
+      text-align: center;
     }
-}
+  
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+  
+    .profile-details p,
+    .profile-details input {
+      font-size: 14px;
+    }
+  
+    .settings-section {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  }
+  

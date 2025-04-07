@@ -19,6 +19,10 @@ const Navbar = () => {
     navigate('/login');
   };
 
+  const handleprofile = () => {
+    navigate('/aseetings');
+  };
+
   // Close dropdown if clicked outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -93,7 +97,7 @@ const Navbar = () => {
               <p className="dropdown-user-designation">{user.designation}</p>
             </div>
           </div>
-          <button className="dropdown-item">
+          <button className="dropdown-item" onClick={handleprofile}>
             <span className="material-icons">account_circle</span>
             My Profile
           </button>

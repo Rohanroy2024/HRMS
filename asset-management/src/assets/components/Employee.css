@@ -153,6 +153,7 @@
 .edit-form button.cancel-btn {
   background-color: #6c757d;
   color: white;
+  margin-left: 1px;
 }
 
 .edit-form button.cancel-btn:hover {
@@ -235,7 +236,7 @@
 
 .material-icons {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 34px;
   color: #007bff;
   transition: color 0.3s;
 }
@@ -279,7 +280,7 @@
 }
 
 .save {
-  background-color: #6c757d;
+  background-color: #0088ff;
   color: white;
 }
 
@@ -288,7 +289,7 @@
 }
 
 .gender {
-  width: 35%;
+  width: 99%;
   /* height: 20%; */
 }
 
@@ -341,7 +342,7 @@
 /* Rest of the form styling remains the same */
 .add-form h3 {
   font-size: 20px;
-  margin-bottom: 15px;
+  /* margin-bottom: 25px; */
   text-align: left;
 }
 
@@ -370,7 +371,7 @@
 }
 
 /* Save Button */
-.add-form button {
+/* .add-form button {
   background-color: #28a745;
   color: white;
   padding: 12px 20px;
@@ -381,14 +382,11 @@
   width: 100%;
   transition: background-color 0.3s;
   margin-bottom: 20px;
-}
+} */
 
-.add-form button:hover {
-  background-color: #218838;
-}
 
 /* Cancel Button */
-.cancel-btn {
+/* .cancel-btn {
   background-color: #dc3545;
   color: white;
   padding: 12px 20px;
@@ -396,14 +394,13 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
-}
+  /* width: 100%; */
+/* } */ */
 
-.cancel-btn:hover {
+/* .cancel-btn:hover {
   background-color: #c82333;
-}
+} */
 
-/* Mobile Responsiveness for Add Employee Form */
 @media (max-width: 768px) {
   .add-form {
     width: 90%;
@@ -486,6 +483,70 @@
   border-radius: 10px;
 
 }
-.close-icon:hover{
+/* .close-icon:hover{
   background-color: #fafdff;
+} */
+/* .add-emp-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* .add-emp-button .save{
+  width: 40%;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* .add-emp-button .cancel-btn{
+  width: 40%;
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}  */
+  .cancel-btn{
+    background-color: #deebfd;
+    margin-left: 20px;
+    width:80px;
+    color: #ff0000;
+ }
+ .cancel-btn:hover{
+  background-color: #d80d0d;
+  color: #fff;
+ }
+ .save{
+  width:80px;
+ }
+ /* .add-form button:hover {
+  background-color: #218838;
+} */
+
+.delete-confirmation{
+  background-color: white;
+  width: 30%;
+  padding: 25px;
+}
+.delete-confirmation h3{
+text-align: center;
+}
+.confirm-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yes-btn{
+  background-color: #1e7e34;
+}
+.no-btn{
+  background-color: red;
+  margin-left: 10px;
 }

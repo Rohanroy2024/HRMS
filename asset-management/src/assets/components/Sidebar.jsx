@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Sidebar.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,14 +19,16 @@ const Sidebar = () => {
     <div className="layout">
       {/* Mobile Menu Toggler with dynamic icon */}
       <div className="menu-toggler" onClick={toggleSidebar}>
-        <span className="material-icons">{isOpen ? 'close' : 'menu'}</span>
+        <span className="material-icons menubar">
+          {isOpen ? "close" : "menu"}
+        </span>
       </div>
 
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="logo">
-          <img 
-            src="https://ik.imagekit.io/sbwxpfy3z/tr:w-192/xlayerLogoColored.png" 
-            alt="Logo" 
+          <img
+            src="https://ik.imagekit.io/sbwxpfy3z/tr:w-192/xlayerLogoColored.png"
+            alt="Logo"
           />
         </div>
         <ul>
@@ -34,7 +36,7 @@ const Sidebar = () => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) => (isActive ? "active-link" : "")}
-              onClick={closeSidebar}  // Close sidebar on click
+              onClick={closeSidebar} // Close sidebar on click
             >
               <span className="material-icons">dashboard</span> Dashboard
             </NavLink>
@@ -43,7 +45,7 @@ const Sidebar = () => {
             <NavLink
               to="/office"
               className={({ isActive }) => (isActive ? "active-link" : "")}
-              onClick={closeSidebar}  // Close sidebar on click
+              onClick={closeSidebar} // Close sidebar on click
             >
               <span className="material-icons">business</span> Office
             </NavLink>
@@ -52,16 +54,24 @@ const Sidebar = () => {
             <NavLink
               to="/employee"
               className={({ isActive }) => (isActive ? "active-link" : "")}
-              onClick={closeSidebar}  // Close sidebar on click
+              onClick={closeSidebar} // Close sidebar on click
             >
               <span className="material-icons">people</span> Employee List
             </NavLink>
           </li>
+          {/* Account seetings */}
+          <li>
+            {/* <NavLink
+              to="/aseetings" 
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={closeSidebar} 
+            >
+              <span className="material-icons">settings</span> Account Settings
+            </NavLink> */}
+          </li>
         </ul>
       </div>
-      <div className="content">
-        {/* Your main content goes here */}
-      </div>
+      <div className="content">{/* Your main content goes here */}</div>
     </div>
   );
 };

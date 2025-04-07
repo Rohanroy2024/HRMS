@@ -180,12 +180,14 @@ const Employee = () => {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-            <button className="save" onClick={handleUpdate}>
-              Save
-            </button>
-            <button onClick={closeModal} className="cancel-btn">
-              Cancel
-            </button>
+            <div className="add-emp-button">
+              <button className="save" onClick={handleUpdate}>
+                Save
+              </button>
+              <button onClick={closeModal} className="cancel-btn">
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -195,12 +197,14 @@ const Employee = () => {
         <div className="modal-overlay">
           <div className="delete-confirmation">
             <h3>Are you sure you want to delete this employee?</h3>
-            <button onClick={handleDelete} className="yes-btn">
-              Yes
-            </button>
-            <button onClick={handleCancelDelete} className="no-btn">
-              No
-            </button>
+            <div className="confirm-button">
+              <button onClick={handleDelete} className="yes-btn">
+                Yes
+              </button>
+              <button onClick={handleCancelDelete} className="no-btn">
+                No
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -316,7 +320,7 @@ const Employee = () => {
       />
 
       <button className="save" onClick={handleAddEmployee}>
-        Add Employee
+        Submit
       </button>
       <button onClick={() => setIsAdding(false)} className="cancel-btn">
         Cancel
@@ -337,11 +341,11 @@ const Employee = () => {
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Gender</th>
-              <th>Action</th>
+              <th>NAME</th>
+              <th>ROLE</th>
+              <th>STATUS</th>
+              <th>GENDER</th>
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody>

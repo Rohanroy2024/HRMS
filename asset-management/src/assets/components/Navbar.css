@@ -177,9 +177,9 @@
 @media screen and (max-width: 768px) {
   /* Remove margin-left on mobile */
   .navbar {
-    margin-left: 86px !important; /* Ensure the left margin is removed */
+    margin-left: 24px !important; /* Ensure the left margin is removed */
     padding: 8px 10px;
-    width: 86% !important; /* Set width to 100% on mobile */
+    width: 92% !important; /* Set width to 100% on mobile */
   }
 
   /* Adjust navbar-right and icons on mobile */
@@ -206,6 +206,9 @@
   }
 
   .search-icon {
-    left: -11px;
+    left: 460px;
+  }
+  .search-bar{
+    display: none;
   }
 }

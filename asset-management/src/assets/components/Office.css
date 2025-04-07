@@ -1,0 +1,30 @@
+.office-container {
+    display: flex;
+    justify-content: space-between;  /* Distributes space between the cards */
+    gap: 20px;                      /* Optional, adds gap between each div */
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+  }
+  .office-container{
+    width:60%;
+    height:40%;
+    margin-top: 80px;
+    margin-left: 455px;
+  }
